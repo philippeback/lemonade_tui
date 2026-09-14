@@ -1,0 +1,385 @@
+/* Textual TUI Emulation Styles for Lemonade TUI Simulator */
+
+.tui-window {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card), 0 0 24px var(--color-terminal-glow);
+  overflow: hidden;
+  font-family: var(--font-mono);
+  user-select: none;
+}
+
+/* Window Chrome */
+.tui-header {
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tui-title-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tui-traffic-lights {
+  display: flex;
+  gap: 6px;
+}
+
+.tui-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.tui-dot.red { background-color: #f85149; }
+.tui-dot.yellow { background-color: #d29922; }
+.tui-dot.green { background-color: #3fb950; }
+
+.tui-header-title {
+  color: #f0883e;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.tui-header-clock {
+  color: #8b949e;
+  font-size: 12px;
+}
+
+/* Task Bar (#task-bar) */
+.tui-task-bar {
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tui-log-name {
+  color: #8b949e;
+  font-size: 12px;
+}
+
+.tui-task-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tui-btn {
+  background: #21262d;
+  border: 1px solid #30363d;
+  color: #58a6ff;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tui-btn:hover {
+  background: #30363d;
+  color: #ffffff;
+  border-color: #8b949e;
+}
+
+.tui-btn:active {
+  transform: translateY(1px);
+}
+
+/* Fixed-Width Banner Elements */
+.tui-banner-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 38ch;
+  background: #1c2128;
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 1px solid #30363d;
+}
+
+.tui-task-id-str {
+  color: #ffffff;
+  font-weight: 700;
+  min-width: 8ch;
+}
+
+.tui-task-status-badge {
+  display: inline-block;
+  width: 11ch;
+  text-align: center;
+  font-weight: 700;
+}
+.tui-status-done { color: #3fb950; }
+.tui-status-inflight { color: #d29922; }
+.tui-status-aborted { color: #f85149; }
+
+.tui-counter {
+  color: #8b949e;
+  font-weight: 500;
+}
+
+/* Invariant 17-cell mode button */
+.tui-btn-mode {
+  width: 17ch;
+  text-align: center;
+  color: #3fb950;
+  font-weight: 700;
+}
+.tui-btn-mode.static {
+  color: #d29922;
+}
+
+/* KPI Ribbon Strip (#kpi-strip) */
+.tui-kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  padding: 12px 16px;
+  background: #0d1117;
+}
+
+.tui-kpi-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 10px 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.tui-kpi-card.highlight {
+  background: #1c2128;
+  border-color: #f0883e;
+}
+
+.tui-kpi-title {
+  color: #8b949e;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.tui-kpi-val {
+  font-size: 13px;
+  font-weight: 700;
+  color: #58a6ff;
+  white-space: nowrap;
+}
+
+.tui-kpi-val.green { color: #3fb950; }
+.tui-kpi-val.orange { color: #d29922; }
+.tui-kpi-val.red { color: #f85149; }
+
+/* Tabs Bar */
+.tui-tabs-bar {
+  display: flex;
+  background: #161b22;
+  border-top: 1px solid #30363d;
+  border-bottom: 1px solid #30363d;
+  overflow-x: auto;
+}
+
+.tui-tab-btn {
+  background: transparent;
+  border: none;
+  color: #8b949e;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-right: 1px solid #21262d;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.tui-tab-btn:hover {
+  color: #c9d1d9;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.tui-tab-btn.active {
+  background: #0d1117;
+  color: #f0883e;
+  border-bottom: 2px solid #f0883e;
+}
+
+/* Tab Content Panes */
+.tui-content-area {
+  padding: 16px;
+  min-height: 280px;
+  background: #0d1117;
+}
+
+.tui-pane {
+  display: none;
+}
+.tui-pane.active {
+  display: block;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Virtual Table */
+.tui-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.tui-table th {
+  background: #161b22;
+  color: #8b949e;
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #30363d;
+}
+
+.tui-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #21262d;
+  color: #c9d1d9;
+}
+
+.tui-table tr.selected td {
+  background: #1c2128;
+  color: #ffffff;
+}
+
+.tui-table tr:hover:not(.selected) td {
+  background: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+}
+
+/* Timeline bar in Overview */
+.tui-timeline-bar {
+  display: flex;
+  height: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 12px 0 16px 0;
+  border: 1px solid #30363d;
+}
+
+.tui-bar-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: #000000;
+  white-space: nowrap;
+  padding: 0 6px;
+}
+
+.tui-bar-queue { background-color: #f85149; }
+.tui-bar-prefill { background-color: #d29922; }
+.tui-bar-decode { background-color: #3fb950; }
+
+/* Raw Log Viewer */
+.tui-raw-log {
+  background: #05070a;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #8b949e;
+  max-height: 240px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+/* Footer Status Bar */
+.tui-footer {
+  background: #161b22;
+  border-top: 1px solid #30363d;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #8b949e;
+}
+
+.tui-keys-strip {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tui-key-badge {
+  color: #f0883e;
+  font-weight: 700;
+}
+
+/* Modal Jump Dialog */
+.tui-modal-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.tui-modal-overlay.active {
+  display: flex;
+}
+
+.tui-modal-box {
+  background: #161b22;
+  border: 1px solid #f0883e;
+  border-radius: 8px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: var(--shadow-modal);
+  text-align: center;
+}
+
+.tui-modal-input {
+  width: 100%;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: #ffffff;
+  margin: 12px 0;
+  outline: none;
+}
+.tui-modal-input:focus {
+  border-color: #f0883e;
+}
+
+/* Responsiveness for Simulator */
+@media (max-width: 860px) {
+  .tui-kpi-strip { grid-template-columns: repeat(3, 1fr); }
+  .tui-task-bar { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 580px) {
+  .tui-kpi-strip { grid-template-columns: repeat(2, 1fr); }
+}

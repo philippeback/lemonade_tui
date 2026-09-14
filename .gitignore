@@ -1,0 +1,30 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+.uv/
+
+# Build & Distribution
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Logs & Temporary reports
+*.log
+!lemonade-sample.log
+tmp/
+temp/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

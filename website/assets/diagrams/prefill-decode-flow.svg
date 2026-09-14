@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="bgBox" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#161b22"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+    <linearGradient id="prefillBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d29922"/>
+      <stop offset="100%" stop-color="#f0883e"/>
+    </linearGradient>
+    <linearGradient id="decodeBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#3fb950"/>
+    </linearGradient>
+    <filter id="boxShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="900" height="360" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Top Title Banner -->
+  <text x="30" y="38" font-family="'Inter', sans-serif" font-size="16" font-weight="700" fill="#c9d1d9">
+    TWO-PHASE LLM INFERENCE ASYMMETRY
+  </text>
+  <text x="375" y="38" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="500" fill="#8b949e">
+    Prefill (Compute-Bound GEMM) vs. Decode (Memory-Bound GEMV)
+  </text>
+
+  <!-- Left Container: PREFILL PHASE -->
+  <g transform="translate(30, 60)" filter="url(#boxShadow)">
+    <rect width="400" height="270" rx="6" fill="url(#bgBox)" stroke="#d29922" stroke-width="1.5"/>
+    <rect x="0" y="0" width="400" height="36" rx="6" fill="#1c2128"/>
+    <!-- Title -->
+    <circle cx="20" cy="18" r="5" fill="#d29922"/>
+    <text x="35" y="23" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#d29922">
+      1. PREFILL PHASE (Prompt Ingestion)
+    </text>
+
+    <!-- Details -->
+    <text x="20" y="65" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#c9d1d9">
+      Input: Entire Prompt (N tokens simultaneously)
+    </text>
+    <text x="20" y="90" font-family="'JetBrains Mono', monospace" font-size="12" fill="#8b949e">
+      Operation: GEMM (Matrix-Matrix Multiply)
+    </text>
+    <text x="20" y="112" font-family="'JetBrains Mono', monospace" font-size="12" fill="#8b949e">
+      Bottleneck: <tspan fill="#f0883e" font-weight="700">COMPUTE-BOUND (Tensor Cores)</tspan>
+    </text>
+
+    <!-- Throughput Bar Graphic -->
+    <rect x="20" y="130" width="360" height="40" rx="4" fill="#0d1117" stroke="#30363d"/>
+    <rect x="22" y="132" width="310" height="36" rx="3" fill="url(#prefillBar)"/>
+    <text x="35" y="155" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#ffffff">
+      400 — 850 tokens / second
+    </text>
+    <text x="240" y="155" font-family="'JetBrains Mono', monospace" font-size="11" fill="#ffffff" opacity="0.85">
+      HIGH ARITHMETIC INTENSITY
+    </text>
+
+    <text x="20" y="195" font-family="'Inter', sans-serif" font-size="12" fill="#8b949e">
+      • Computes initial Key-Value pairs across all prompt tokens
+    </text>
+    <text x="20" y="215" font-family="'Inter', sans-serif" font-size="12" fill="#8b949e">
+      • Populates GPU VRAM KV Cache buffer (O(N) memory)
+    </text>
+    <text x="20" y="235" font-family="'Inter', sans-serif" font-size="12" fill="#f85149">
+      • Subject to O(N²) self-attention decay as prompt reaches 13K+
+    </text>
+    <text x="20" y="255" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" fill="#d29922">
+      Observed TTFT: 1.23ms/tok @ 4K → 2.21ms/tok @ 13.5K
+    </text>
+  </g>
+
+  <!-- Connecting Arrow in Middle -->
+  <g transform="translate(436, 175)">
+    <path d="M 0 15 L 20 15 L 20 5 L 34 20 L 20 35 L 20 25 L 0 25 Z" fill="#30363d" stroke="#58a6ff" stroke-width="1"/>
+  </g>
+
+  <!-- Right Container: DECODE PHASE -->
+  <g transform="translate(470, 60)" filter="url(#boxShadow)">
+    <rect width="400" height="270" rx="6" fill="url(#bgBox)" stroke="#3fb950" stroke-width="1.5"/>
+    <rect x="0" y="0" width="400" height="36" rx="6" fill="#1c2128"/>
+    <!-- Title -->
+    <circle cx="20" cy="18" r="5" fill="#3fb950"/>
+    <text x="35" y="23" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#3fb950">
+      2. DECODE PHASE (Token Generation)
+    </text>
+
+    <!-- Details -->
+    <text x="20" y="65" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#c9d1d9">
+      Input: 1 Token at a time (Sequential loop)
+    </text>
+    <text x="20" y="90" font-family="'JetBrains Mono', monospace" font-size="12" fill="#8b949e">
+      Operation: GEMV (Matrix-Vector Multiply)
+    </text>
+    <text x="20" y="112" font-family="'JetBrains Mono', monospace" font-size="12" fill="#8b949e">
+      Bottleneck: <tspan fill="#58a6ff" font-weight="700">MEMORY BANDWIDTH BOUND (HBM/DRAM)</tspan>
+    </text>
+
+    <!-- Throughput Bar Graphic -->
+    <rect x="20" y="130" width="360" height="40" rx="4" fill="#0d1117" stroke="#30363d"/>
+    <rect x="22" y="132" width="120" height="36" rx="3" fill="url(#decodeBar)"/>
+    <text x="35" y="155" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#ffffff">
+      20 — 45 t/s
+    </text>
+    <text x="155" y="155" font-family="'JetBrains Mono', monospace" font-size="11" fill="#3fb950" font-weight="700">
+      → 65.4 t/s WITH SPECULATIVE MTP (3.1x)
+    </text>
+
+    <text x="20" y="195" font-family="'Inter', sans-serif" font-size="12" fill="#8b949e">
+      • Reads ALL 22GB+ model weights to emit a single token
+    </text>
+    <text x="20" y="215" font-family="'Inter', sans-serif" font-size="12" fill="#8b949e">
+      • Arithmetic intensity &lt; 1 FLOP/byte (Memory Bandwidth Wall)
+    </text>
+    <text x="20" y="235" font-family="'Inter', sans-serif" font-size="12" fill="#58a6ff">
+      • Accelerated via Multi-Token Prediction (MTP verification)
+    </text>
+    <text x="20" y="255" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" fill="#3fb950">
+      CUDA Graphs reused: 16,290+ hits eliminating driver delay
+    </text>
+  </g>
+</svg>

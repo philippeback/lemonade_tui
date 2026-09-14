@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 320" width="100%" height="100%" fill="none">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="860" height="320" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  
+  <text x="30" y="36" font-family="'Inter', sans-serif" font-size="16" font-weight="700" fill="#c9d1d9">
+    MULTI-TOKEN PREDICTION (MTP) SPECULATIVE DYNAMICS
+  </text>
+  <text x="470" y="36" font-family="'JetBrains Mono', monospace" font-size="13" fill="#3fb950" font-weight="600">
+    Draft Acceptance α = 67.23% | Mean Length τ = 3.02 t/step
+  </text>
+
+  <!-- Step t: Parallel Draft Generation -->
+  <g transform="translate(30, 60)" filter="url(#shadow)">
+    <rect width="380" height="230" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="0" y="0" width="380" height="32" rx="6" fill="#1c2128"/>
+    <text x="16" y="22" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#58a6ff">
+      1. FORWARD PASS (Step t)
+    </text>
+
+    <text x="20" y="60" font-family="'JetBrains Mono', monospace" font-size="12" fill="#c9d1d9">
+      Target Head:
+    </text>
+    <rect x="120" y="44" width="70" height="24" rx="4" fill="#1c2128" stroke="#3fb950" stroke-width="1"/>
+    <text x="135" y="61" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#3fb950">T_1</text>
+
+    <!-- Draft heads -->
+    <text x="20" y="98" font-family="'JetBrains Mono', monospace" font-size="12" fill="#8b949e">
+      Draft Head 1:
+    </text>
+    <rect x="120" y="82" width="70" height="24" rx="4" fill="#1c2128" stroke="#f0883e" stroke-width="1"/>
+    <text x="135" y="99" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#f0883e">[T_2]</text>
+
+    <text x="20" y="136" font-family="'JetBrains Mono', monospace" font-size="12" fill="#8b949e">
+      Draft Head 2:
+    </text>
+    <rect x="120" y="120" width="70" height="24" rx="4" fill="#1c2128" stroke="#f0883e" stroke-width="1"/>
+    <text x="135" y="137" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#f0883e">[T_3]</text>
+
+    <text x="20" y="174" font-family="'JetBrains Mono', monospace" font-size="12" fill="#8b949e">
+      Draft Head 3:
+    </text>
+    <rect x="120" y="158" width="70" height="24" rx="4" fill="#1c2128" stroke="#f0883e" stroke-width="1"/>
+    <text x="135" y="175" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#f0883e">[T_4]</text>
+
+    <text x="20" y="210" font-family="'Inter', sans-serif" font-size="11" fill="#8b949e">
+      Auxiliary heads propose 3 speculative candidate tokens in parallel.
+    </text>
+  </g>
+
+  <!-- Arrow -->
+  <g transform="translate(418, 160)">
+    <path d="M 0 10 L 14 10 L 14 4 L 24 14 L 14 24 L 14 18 L 0 18 Z" fill="#30363d" stroke="#f0883e" stroke-width="1"/>
+  </g>
+
+  <!-- Step t+1: Parallel Verification Pass -->
+  <g transform="translate(450, 60)" filter="url(#shadow)">
+    <rect width="380" height="230" rx="6" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+    <rect x="0" y="0" width="380" height="32" rx="6" fill="#1c2128"/>
+    <text x="16" y="22" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#3fb950">
+      2. VERIFICATION PASS (Step t+1)
+    </text>
+
+    <text x="20" y="60" font-family="'JetBrains Mono', monospace" font-size="12" fill="#c9d1d9">
+      Candidate Evaluation:
+    </text>
+
+    <g transform="translate(20, 75)">
+      <!-- T1 -->
+      <rect x="0" y="0" width="60" height="36" rx="4" fill="#1c2128" stroke="#3fb950"/>
+      <text x="18" y="22" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#3fb950">T_1</text>
+      <text x="2" y="50" font-family="'JetBrains Mono', monospace" font-size="10" fill="#3fb950">✔ Base</text>
+
+      <!-- T2 -->
+      <rect x="70" y="0" width="60" height="36" rx="4" fill="#1c2128" stroke="#3fb950"/>
+      <text x="88" y="22" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#3fb950">T_2</text>
+      <text x="72" y="50" font-family="'JetBrains Mono', monospace" font-size="10" fill="#3fb950">✔ Accept</text>
+
+      <!-- T3 -->
+      <rect x="140" y="0" width="60" height="36" rx="4" fill="#1c2128" stroke="#3fb950"/>
+      <text x="158" y="22" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#3fb950">T_3</text>
+      <text x="142" y="50" font-family="'JetBrains Mono', monospace" font-size="10" fill="#3fb950">✔ Accept</text>
+
+      <!-- T4 -->
+      <rect x="210" y="0" width="60" height="36" rx="4" fill="#1c2128" stroke="#f85149"/>
+      <text x="228" y="22" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#f85149">T_4</text>
+      <text x="212" y="50" font-family="'JetBrains Mono', monospace" font-size="10" fill="#f85149">✖ Reject</text>
+
+      <!-- Replacement T4' -->
+      <rect x="280" y="0" width="60" height="36" rx="4" fill="#1c2128" stroke="#58a6ff"/>
+      <text x="296" y="22" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#58a6ff">T_4'</text>
+      <text x="282" y="50" font-family="'JetBrains Mono', monospace" font-size="10" fill="#58a6ff">★ Sampled</text>
+    </g>
+
+    <!-- Payoff summary -->
+    <rect x="20" y="145" width="340" height="42" rx="4" fill="#0d1117" stroke="#30363d"/>
+    <text x="32" y="166" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#3fb950">
+      Tokens Emitted: 3 tokens in 1 memory pass
+    </text>
+    <text x="32" y="180" font-family="'Inter', sans-serif" font-size="11" fill="#8b949e">
+      Throughput jumps from ~21 t/s to 65.41 t/s (3.1x acceleration)
+    </text>
+  </g>
+</svg>

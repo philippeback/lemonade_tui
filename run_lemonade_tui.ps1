@@ -1,0 +1,1 @@
+uv run python .\lemonade_tui.py "$env:TEMP\lemonade-server.log"   

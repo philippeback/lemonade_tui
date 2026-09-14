@@ -1,0 +1,43 @@
+2026-09-11 21:23:33.168 [Info] (Server) POST /api/v1/chat/completions - 200 OK
+2026-09-11 21:23:39.156 [Info] (Process) 29.40.117.875 I slot launch_slot_: id  0 | task 5376 | processing task, is_child = 0
+2026-09-11 21:23:45.164 [Info] (Process) 29.46.126.032 I slot print_timing: id  0 | task 5376 | prompt processing, n_tokens =   4096, progress = 0.30, t =   5.03 s / 813.54 tokens per second
+2026-09-11 21:23:49.421 [Info] (Process) 29.50.382.770 I slot print_timing: id  0 | task 5376 | prompt processing, n_tokens =   6144, progress = 0.46, t =   8.96 s / 685.70 tokens per second
+2026-09-11 21:23:54.264 [Info] (Process) 29.55.225.634 I slot print_timing: id  0 | task 5376 | prompt processing, n_tokens =   8192, progress = 0.61, t =  13.69 s / 598.19 tokens per second
+2026-09-11 21:23:59.657 [Info] (Process) 30.00.618.372 I slot print_timing: id  0 | task 5376 | prompt processing, n_tokens =  10240, progress = 0.76, t =  18.89 s / 542.19 tokens per second
+2026-09-11 21:24:05.842 [Info] (Process) 30.06.803.458 I slot print_timing: id  0 | task 5376 | prompt processing, n_tokens =  12288, progress = 0.91, t =  24.79 s / 495.61 tokens per second
+2026-09-11 21:24:08.187 [Info] (Process) 30.09.149.195 I slot print_timing: id  0 | task 5376 | prompt processing, n_tokens =  12929, progress = 0.96, t =  28.31 s / 456.76 tokens per second
+2026-09-11 21:24:10.537 [Info] (Process) 30.11.498.619 I slot print_timing: id  0 | task 5376 | prompt processing, n_tokens =  13441, progress = 1.00, t =  29.76 s / 451.62 tokens per second
+2026-09-11 21:24:14.426 [Info] (Process) 30.15.387.834 I slot print_timing: id  0 | task 5376 | n_gen =    207, tg =  67.47 t/s, tg_3s =  67.80 t/s
+2026-09-11 21:24:17.448 [Info] (Process) 30.18.409.986 I slot print_timing: id  0 | task 5376 | n_gen =    386, tg =  63.37 t/s, tg_3s =  59.23 t/s
+2026-09-11 21:24:20.462 [Info] (Process) 30.21.424.178 I slot print_timing: id  0 | task 5376 | n_gen =    576, tg =  63.26 t/s, tg_3s =  63.03 t/s
+2026-09-11 21:24:23.505 [Info] (Process) 30.24.467.430 I slot print_timing: id  0 | task 5376 | n_gen =    766, tg =  63.05 t/s, tg_3s =  62.43 t/s
+2026-09-11 21:24:26.509 [Info] (Process) 30.27.471.181 I slot print_timing: id  0 | task 5376 | n_gen =    948, tg =  62.56 t/s, tg_3s =  60.59 t/s
+2026-09-11 21:24:29.517 [Info] (Process) 30.30.479.081 I slot print_timing: id  0 | task 5376 | n_gen =   1149, tg =  63.27 t/s, tg_3s =  66.82 t/s
+2026-09-11 21:24:32.523 [Info] (Process) 30.33.484.990 I slot print_timing: id  0 | task 5376 | n_gen =   1338, tg =  63.21 t/s, tg_3s =  62.88 t/s
+2026-09-11 21:24:35.553 [Info] (Process) 30.36.514.507 I slot print_timing: id  0 | task 5376 | n_gen =   1546, tg =  63.90 t/s, tg_3s =  68.66 t/s
+2026-09-11 21:24:38.555 [Info] (Process) 30.39.516.585 I slot print_timing: id  0 | task 5376 | n_gen =   1756, tg =  64.57 t/s, tg_3s =  69.95 t/s
+2026-09-11 21:24:41.245 [Info] (Process) 30.42.206.496 I slot print_timing: id  0 | task 5376 | prompt eval time =   32216.67 ms / 13445 tokens (    2.40 ms per token,   417.33 tokens per second)
+2026-09-11 21:24:41.245 [Info] (Process) 30.42.206.504 I slot print_timing: id  0 | task 5376 |        eval time =   29871.84 ms /  1955 tokens (   15.29 ms per token,    65.41 tokens per second)
+2026-09-11 21:24:41.245 [Info] (Process) 30.42.206.506 I slot print_timing: id  0 | task 5376 |       total time =   62088.51 ms / 15400 tokens
+2026-09-11 21:24:41.245 [Info] (Process) 30.42.206.506 I slot print_timing: id  0 | task 5376 |    graphs reused =       6849
+2026-09-11 21:24:41.245 [Info] (Process) 30.42.206.512 I slot print_timing: id  0 | task 5376 | draft acceptance = 0.67233 ( 1307 accepted /  1944 generated), mean len =  3.02
+2026-09-11 21:24:41.245 [Info] (Process) 30.42.206.928 I slot      release: id  0 | task 5376 | stop processing: n_tokens = 15400, truncated = 0
+2026-09-11 21:24:41.245 [Info] (Process) 30.42.207.131 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = 1842146247
+2026-09-11 21:24:41.246 [Info] (Telemetry) Inference completed: model=Huihui-Qwen3.6-35B-A3B-abliterated-MTP-GGUF-Q4_K, tokens=15400 (in=13445, out=1955), ttft=32.22s, tps=65.41
+2026-09-11 21:24:45.730 [Info] (Process) 30.46.691.943 I slot launch_slot_: id  0 | task 6337 | processing task, is_child = 0
+2026-09-11 21:24:51.338 [Info] (Process) 30.52.300.215 I slot print_timing: id  0 | task 6337 | prompt processing, n_tokens =   1452, progress = 1.00, t =   3.92 s / 370.15 tokens per second
+2026-09-11 21:24:55.215 [Info] (Process) 30.56.177.187 I slot print_timing: id  0 | task 6337 | n_gen =    196, tg =  64.67 t/s, tg_3s =  65.00 t/s
+2026-09-11 21:24:58.217 [Info] (Process) 30.59.178.448 I slot print_timing: id  0 | task 6337 | n_gen =    366, tg =  60.67 t/s, tg_3s =  56.64 t/s
+2026-09-11 21:25:01.224 [Info] (Process) 31.02.185.750 I slot print_timing: id  0 | task 6337 | n_gen =    540, tg =  59.73 t/s, tg_3s =  57.86 t/s
+2026-09-11 21:25:04.249 [Info] (Process) 31.05.211.121 I slot print_timing: id  0 | task 6337 | n_gen =    699, tg =  57.93 t/s, tg_3s =  52.56 t/s
+2026-09-11 21:25:07.272 [Info] (Process) 31.08.233.710 I slot print_timing: id  0 | task 6337 | n_gen =    882, tg =  58.45 t/s, tg_3s =  60.54 t/s
+2026-09-11 21:25:10.279 [Info] (Process) 31.11.241.297 I slot print_timing: id  0 | task 6337 | n_gen =   1069, tg =  59.07 t/s, tg_3s =  62.18 t/s
+2026-09-11 21:25:13.290 [Info] (Process) 31.14.252.172 I slot print_timing: id  0 | task 6337 | n_gen =   1251, tg =  59.27 t/s, tg_3s =  60.45 t/s
+2026-09-11 21:25:16.328 [Info] (Process) 31.17.289.753 I slot print_timing: id  0 | task 6337 | n_gen =   1475, tg =  61.09 t/s, tg_3s =  73.74 t/s
+2026-09-11 21:25:17.638 [Info] (Process) 31.18.599.621 I slot print_timing: id  0 | task 6337 | prompt eval time =    6470.00 ms /  1456 tokens (    4.44 ms per token,   225.04 tokens per second)
+2026-09-11 21:25:17.638 [Info] (Process) 31.18.599.647 I slot print_timing: id  0 | task 6337 |        eval time =   25437.57 ms /  1577 tokens (   16.14 ms per token,    61.96 tokens per second)
+2026-09-11 21:25:17.638 [Info] (Process) 31.18.599.649 I slot print_timing: id  0 | task 6337 |       total time =   31907.57 ms /  3033 tokens
+2026-09-11 21:25:17.638 [Info] (Process) 31.18.599.650 I slot print_timing: id  0 | task 6337 |    graphs reused =       7386
+2026-09-11 21:25:17.638 [Info] (Process) 31.18.599.657 I slot print_timing: id  0 | task 6337 | draft acceptance = 0.63358 ( 1034 accepted /  1632 generated), mean len =  2.90
+2026-09-11 21:25:17.638 [Info] (Process) 31.18.600.166 I slot      release: id  0 | task 6337 | stop processing: n_tokens = 16017, truncated = 0
+2026-09-11 21:25:17.639 [Info] (Telemetry) Inference completed: model=Huihui-Qwen3.6-35B-A3B-abliterated-MTP-GGUF-Q4_K, tokens=3033 (in=1456, out=1577), ttft=6.47s, tps=61.96

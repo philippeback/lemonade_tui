@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="100%" fill="none">
+  <defs>
+    <filter id="glowState" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="240" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  
+  <text x="30" y="34" font-family="'Inter', sans-serif" font-size="15" font-weight="700" fill="#c9d1d9">
+    TASK LIFECYCLE FINITE STATE MACHINE (FSM)
+  </text>
+  <text x="390" y="34" font-family="'JetBrains Mono', monospace" font-size="12" fill="#8b949e">
+    LemonadeLogParser Slot &amp; Request Tracking
+  </text>
+
+  <!-- Node 1: Ingress -->
+  <g transform="translate(40, 70)" filter="url(#glowState)">
+    <rect width="140" height="80" rx="6" fill="#161b22" stroke="#58a6ff" stroke-width="1.5"/>
+    <text x="16" y="28" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#58a6ff">1. INGRESS</text>
+    <text x="16" y="48" font-family="'Inter', sans-serif" font-size="11" fill="#8b949e">HTTP POST received</text>
+    <text x="16" y="64" font-family="'JetBrains Mono', monospace" font-size="10" fill="#c9d1d9">Stage timestamp</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <g transform="translate(185, 102)">
+    <line x1="0" y1="8" x2="35" y2="8" stroke="#58a6ff" stroke-width="2"/>
+    <polygon points="35,4 45,8 35,12" fill="#58a6ff"/>
+    <text x="-5" y="-4" font-family="'JetBrains Mono', monospace" font-size="9" fill="#8b949e">launch_slot</text>
+  </g>
+
+  <!-- Node 2: In-Flight -->
+  <g transform="translate(235, 70)" filter="url(#glowState)">
+    <rect width="150" height="80" rx="6" fill="#161b22" stroke="#d29922" stroke-width="2"/>
+    <text x="16" y="28" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#d29922">⚡ IN-FLIGHT</text>
+    <text x="16" y="48" font-family="'Inter', sans-serif" font-size="11" fill="#8b949e">Prompt eval / tg_3s</text>
+    <text x="16" y="64" font-family="'JetBrains Mono', monospace" font-size="10" fill="#c9d1d9">Streaming tokens</text>
+  </g>
+
+  <!-- Arrow 2 -> Completed (Top branch) -->
+  <g transform="translate(390, 85)">
+    <path d="M 0 15 Q 40 -15 80 -15" stroke="#3fb950" stroke-width="2" fill="none"/>
+    <polygon points="80,-19 90,-15 80,-11" fill="#3fb950"/>
+    <text x="15" y="-8" font-family="'JetBrains Mono', monospace" font-size="9" fill="#3fb950">eval time</text>
+  </g>
+
+  <!-- Node 3: Completed -->
+  <g transform="translate(485, 40)" filter="url(#glowState)">
+    <rect width="160" height="70" rx="6" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+    <text x="16" y="26" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#3fb950">✔ COMPLETED</text>
+    <text x="16" y="44" font-family="'Inter', sans-serif" font-size="11" fill="#8b949e">Inference completed</text>
+    <text x="16" y="58" font-family="'JetBrains Mono', monospace" font-size="10" fill="#c9d1d9">Metrics calculated</text>
+  </g>
+
+  <!-- Arrow 2 -> Aborted (Bottom branch) -->
+  <g transform="translate(390, 135)">
+    <path d="M 0 5 Q 40 35 80 35" stroke="#f85149" stroke-width="2" fill="none"/>
+    <polygon points="80,31 90,35 80,39" fill="#f85149"/>
+    <text x="8" y="30" font-family="'JetBrains Mono', monospace" font-size="9" fill="#f85149">disconnect / unload</text>
+  </g>
+
+  <!-- Node 4: Aborted -->
+  <g transform="translate(485, 135)" filter="url(#glowState)">
+    <rect width="160" height="70" rx="6" fill="#161b22" stroke="#f85149" stroke-width="1.5"/>
+    <text x="16" y="26" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#f85149">✖ ABORTED</text>
+    <text x="16" y="44" font-family="'Inter', sans-serif" font-size="11" fill="#8b949e">Premature release</text>
+    <text x="16" y="58" font-family="'JetBrains Mono', monospace" font-size="10" fill="#c9d1d9">Zero leak in metrics</text>
+  </g>
+</svg>
