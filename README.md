@@ -1,7 +1,7 @@
 # Lemonade TUI
 
 <p align="center">
-  <img src="website/assets/brand/logo-lemonade-tui.svg" alt="Lemonade TUI Logo" width="480">
+  <img src="docs/assets/brand/logo-lemonade-tui.svg" alt="Lemonade TUI Logo" width="480">
 </p>
 
 <p align="center">
@@ -12,7 +12,7 @@
   <a href="#quick-start"><img src="https://img.shields.io/badge/python-3.10%2B-blue.svg" alt="Python 3.10+"></a>
   <a href="#quick-start"><img src="https://img.shields.io/badge/package_manager-uv-green.svg" alt="uv"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-orange.svg" alt="License: MIT"></a>
-  <a href="website/index.html"><img src="https://img.shields.io/badge/docs-website-orange.svg" alt="Documentation Website"></a>
+  <a href="https://philippeback.github.io/lemonade_tui/"><img src="https://img.shields.io/badge/docs-website-orange.svg" alt="Documentation Website"></a>
 </p>
 
 ---
@@ -91,7 +91,7 @@ python lemonade_tui.py
 * **[`lemonade_tui_modularization_plan.md`](lemonade_tui_modularization_plan.md)**: Architectural plan for decomposing the monolithic script into a modular package.
 * **[`lemonate_tui_telemetry_guide.md`](lemonate_tui_telemetry_guide.md)**: Deep-dive guide on telemetry extraction and log grammars.
 * **[`lemonade-sample.log`](lemonade-sample.log)**: Realistic sample log stream featuring tasks with MTP acceleration and in-flight streaming.
-* **[`website/`](website/)**: Official showcase website and browser-based interactive Textual engine simulator.
+* **[`docs/`](https://philippeback.github.io/lemonade_tui/)**: Official showcase website and browser-based interactive Textual engine simulator (hosted on GitHub Pages).
 
 ---
 
