@@ -28,3 +28,8 @@ temp/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Firebase
+.firebase/
+firebase-debug.log*
+.runtimeconfig.json
