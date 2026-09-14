@@ -122,7 +122,7 @@ $$\text{Effective Speedup} \approx \text{Mean Speculative Length} = \frac{\text{
 
 ## 4. The SOTA TUI Tool: `lemonade_tui.py`
 
-[`lemonade_tui.py`](file:///C:/Dev/github/philippeback/pgvector/lemonade_tui.py) is a standalone, state-of-the-art Python tool designed to parse and visualize Lemonade Server logs. Built using **Textual** and **Rich**, it supports both full interactive terminal mode and static dashboard rendering.
+[`lemonade_tui.py`](file:///C:/Dev/github/philippeback/lemonade_tui/lemonade_tui.py) is a standalone, state-of-the-art Python tool designed to parse and visualize Lemonade Server logs. Built using **Textual** and **Rich**, it supports both full interactive terminal mode and static dashboard rendering.
 
 ### Feature Summary
 

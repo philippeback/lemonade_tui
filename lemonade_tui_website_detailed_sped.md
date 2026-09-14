@@ -212,7 +212,7 @@ The website **SHALL** be structured as a high-velocity single-page technical por
 * **Right Actions:**
   * **GitHub Repository Button (`#btn-github-nav`):**
     * Label: `GitHub` with Octocat icon and live/placeholder star count badge.
-    * Target: `https://github.com/philippeback/pgvector` (or project repo URL).
+    * Target: `https://github.com/philippeback/lemonade_tui` (or project repo URL).
     * Styling: Dark button, border `1px solid #30363d`, hover color `#f0883e`.
   * **Quick Launch Button (`#btn-quick-launch`):**
     * Label: `uv run`
@@ -559,4 +559,4 @@ All screenshots **MUST** be captured at `1920x1080` (or `2x` Retina equivalent a
 
 ---
 
-*OpenSpec Document Authored for Lemonade TUI Project Repository (`philippeback/pgvector`).*
+*OpenSpec Document Authored for Lemonade TUI Project Repository (`philippeback/lemonade_tui`).*

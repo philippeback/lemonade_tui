@@ -1827,7 +1827,7 @@ def resolve_log_path(raw_arg: str) -> str:
         candidates = [
             path,
             os.path.join(os.getcwd(), path),
-            os.path.join(r"C:\Dev\github\philippeback\pgvector", path)
+            os.path.join(r"C:\Dev\github\philippeback\lemonade_tui", path)
         ]
         for c in candidates:
             if os.path.exists(c):

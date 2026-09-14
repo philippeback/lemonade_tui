@@ -160,4 +160,4 @@ The `website/` directory is structured to deploy directly as a GitHub Pages sour
 
 ---
 
-*Authored for the Lemonade TUI Project Repository (`philippeback/pgvector`).*
+*Authored for the Lemonade TUI Project Repository (`philippeback/lemonade_tui`).*
